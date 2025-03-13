@@ -87,122 +87,6 @@
             margin-bottom: 1.5rem;
         }
 
-        .chat-bubble {
-            position: fixed;
-            bottom: 3rem;
-            right: 3rem;
-            background: var(--primary-gradient);
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(127,0,255,0.3);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1rem;
-        }
-
-        .chat-bubble::before {
-            content: "Book";
-            position: absolute;
-            bottom: -30px;
-            right: 0;
-            background: var(--primary-gradient);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            transform: translateX(50%);
-            white-space: nowrap;
-            opacity: 1;
-            transition: opacity 0.3s ease;
-        }
-
-        .chat-expanded {
-            width: 450px;
-            height: 600px;
-            border-radius: 24px;
-            position: fixed;
-            bottom: 3rem;
-            right: 3rem;
-            background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255,255,255,0.1);
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-
-        .chat-header {
-            background: var(--primary-gradient);
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-radius: 20px 20px 0 0;
-        }
-
-        .chat-header h3 {
-            color: white;
-            margin: 0;
-        }
-
-        .close-chat {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .chat-form {
-            padding: 20px;
-            height: calc(100% - 70px);
-            overflow-y: auto;
-        }
-
-        .form-control-custom {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            color: var(--text-light);
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 15px;
-            transition: all 0.3s ease;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .form-control-custom:focus {
-            background: rgba(255,255,255,0.1);
-            border-color: rgba(127,0,255,0.5);
-            box-shadow: 0 0 0 3px rgba(127,0,255,0.1);
-            outline: none;
-        }
-
-        .chat-submit {
-            background: var(--primary-gradient);
-            color: white;
-            border: none;
-            border-radius: 25px;
-            padding: 12px 25px;
-            cursor: pointer;
-            width: 100%;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .chat-submit:hover {
-            background: var(--primary-gradient);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(127,0,255,0.2);
-        }
-
         .notification {
             position: fixed;
             top: 20px;
@@ -299,9 +183,14 @@
                         <p class="opacity-75 fs-5">At We Create Softwares, we transform constraints into opportunities. Our zero-cost model breaks financial barriers while delivering enterprise-grade solutions through:</p>
                         
                         <div class="mt-5">
-                            <div class="mb-4">
-                                <h3 class="h4 fw-bold">Smart Architecture</h3>
-                                <p class="opacity-75">Modular microservices built with cutting-edge tech stack</p>
+                            <div class="d-flex align-items-start mb-4">
+                                <div class="feature-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <div class="ms-4">
+                                    <h3 class="h4 fw-bold">Smart Architecture</h3>
+                                    <p class="opacity-75">Modular microservices built with cutting-edge tech stack</p>
+                                </div>
                             </div>
                             
                             <div class="d-flex align-items-start mb-4">
@@ -360,48 +249,50 @@
         </div>
     </section>
 
-    <!-- Email Chat System -->
-    <div class="chat-bubble" id="chatBubble">
-        <span>Book</span>
-    </div>
-
-    <div class="d-none" id="chatContainer">
-        <div class="chat-expanded">
-            <div class="chat-header">
-                <h3>Let's Build Together</h3>
-                <button class="close-chat">&times;</button>
-            </div>
-            <form id="emailForm" class="chat-form">
-                <input type="email" placeholder="Your Email" required class="form-control-custom">
-                <textarea placeholder="Describe your vision..." rows="6" required class="form-control-custom"></textarea>
-                <button type="submit" class="chat-submit">Send Message</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Owner Section -->
-    <section class="neo-section" id="owner">
+    <!-- Contact Section -->
+    <section class="neo-section" id="contact">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6">
-                    <div class="owner-card p-4">
-                        <div class="text-center">
-                            <div class="avatar-wrapper mb-4">
-                                <img src="https://api.dicebear.com/7.x/identicon/svg?seed=Prateek" 
-                                     class="rounded-circle" 
-                                     width="120" 
-                                     alt="Prateek">
-                            </div>
-                            <h2 class="mb-3 fw-bold">Prateek Kushwaha</h2>
-                            <div class="d-flex flex-column gap-2">
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <span class="flag-icon flag-icon-in"></span>
-                                    <span class="ms-2">India</span>
-                                </div>
-                                <a href="mailto:prateekkushwaha868@gmail.com" class="text-decoration-none">
-                                    ✉️ prateekkushwaha868@gmail.com
+                    <div class="glass-card p-4 text-center">
+                        <div class="avatar-wrapper mb-4">
+                            <img src="https://api.dicebear.com/7.x/identicon/svg?seed=Prateek" 
+                                 class="rounded-circle" 
+                                 width="120" 
+                                 alt="Prateek">
+                        </div>
+                        <h2 class="mb-3 fw-bold">Prateek Kushwaha</h2>
+                        <p class="opacity-75">Full Stack Developer & Software Architect</p>
+                        <div class="contact-info mt-4">
+                            <p class="mb-1">
+                                <i class="fas fa-map-marker-alt me-2"></i>
+                                Based in India
+                            </p>
+                            <p class="mb-1">
+                                <i class="fas fa-envelope me-2"></i>
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=prateekkushwaha868@gmail.com&su=Project%20Inquiry&body=Hello%20Prateek%2C%0A%0AI%20would%20like%20to%20discuss%20a%20project%20idea">Email via Gmail</a>
+                            </p>
+                            <p class="mb-1">
+                                <i class="fas fa-phone me-2"></i>
+                                <a href="https://wa.me/+918368737880" class="text-decoration-none">
+                                    +91 8368737880 (WhatsApp)
                                 </a>
-                            </div>
+                            </p>
+                            <p class="mb-1">
+                                <i class="fab fa-instagram me-2"></i>
+                                <a href="https://instagram.com/itsprateek4510" class="text-decoration-none">
+                                    @itsprateek4510 (Instagram)
+                                </a>
+                            </p>
+                        </div>
+                       
+                        <div class="mt-4">
+                            <p class="opacity-75">
+                                As a full stack developer with expertise in modern technologies, I specialize in transforming innovative ideas into robust digital solutions. With a strong foundation in both front-end and back-end development, I deliver end-to-end solutions that meet business objectives while maintaining code quality and scalability.
+                            </p>
+                            <p class="opacity-75">
+                                I'm currently available for freelance projects and collaborations. Let's discuss how I can help bring your vision to life through cutting-edge software development.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -411,39 +302,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Initialize EmailJS
-        emailjs.init('YOUR_EMAILJS_USER_ID');
-
-        // Chat System
-        const chatBubble = document.getElementById('chatBubble');
-        const chatContainer = document.getElementById('chatContainer');
-        const closeChat = document.querySelector('.close-chat');
-        
-        chatBubble.addEventListener('click', () => {
-            chatContainer.classList.remove('d-none');
-            chatBubble.style.display = 'none';
-        });
-
-        closeChat.addEventListener('click', () => {
-            chatContainer.classList.add('d-none');
-            chatBubble.style.display = 'flex';
-        });
-
-        // Form Submission
-        document.getElementById('emailForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target)
-                .then(() => {
-                    showNotification('Message sent successfully!', 'success');
-                    e.target.reset();
-                    chatContainer.classList.add('d-none');
-                    chatBubble.style.display = 'flex';
-                })
-                .catch(() => {
-                    showNotification('Error sending message. Please try again.', 'error');
-                });
-        });
-
         // Animate on Scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
